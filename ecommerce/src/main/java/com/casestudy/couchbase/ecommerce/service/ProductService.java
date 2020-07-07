@@ -11,11 +11,4 @@ package com.casestudy.couchbase.ecommerce.service;
  */
 public interface ProductService {
 
-    /**
-     * Uppload product data file.
-     *
-     */
-    public void uploadData();
-
-
 }

@@ -34,6 +34,13 @@ public class CouchbaseConnectionFactory {
 
     private Bucket productBucket;
 
+    private Bucket reviewBucket;
+
+    private Bucket customerBucket;
+
+    private Bucket purchaseBucket;
+
+
     @PostConstruct
     private void init() {
 
@@ -47,9 +54,17 @@ public class CouchbaseConnectionFactory {
                         config.getUserName(),
                         config.getPassword()).environment(env));
         productBucket = cluster.bucket(config.getProductBucket());
+        reviewBucket  = cluster.bucket(config.getReviewsBucket());
+        customerBucket  = cluster.bucket(config.getCustomerBucket());
+        purchaseBucket  = cluster.bucket(config.getPurchasesBucket());
+
         System.out.println("Connection initlization completed");
     }
 
+    /**
+     * pre destory.
+     *
+     */
     @PreDestroy
     private void destory() {
         System.out.println("Closing connection");
@@ -84,6 +99,36 @@ public class CouchbaseConnectionFactory {
      */
     public Bucket getProductBucket() {
         return productBucket;
+    }
+
+    /**
+     *
+     * Getter of {@link #reviewBucket}.
+     *
+     * @return {@link #reviewBucket}
+     */
+    public Bucket getReviewBucket() {
+        return reviewBucket;
+    }
+
+    /**
+     *
+     * Getter of {@link #customerBucket}.
+     *
+     * @return {@link #customerBucket}
+     */
+    public Bucket getCustomerBucket() {
+        return customerBucket;
+    }
+
+    /**
+     *
+     * Getter of {@link #purchaseBucket}.
+     *
+     * @return {@link #purchaseBucket}
+     */
+    public Bucket getPurchaseBucket() {
+        return purchaseBucket;
     }
 
 

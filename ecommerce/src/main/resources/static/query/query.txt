@@ -1,0 +1,11 @@
+# query on product bucket
+CREATE PRIMARY INDEX `review-primary-index` ON `product` USING GSI;
+
+# query on reviews bucket
+CREATE PRIMARY INDEX `review-primary-index` ON `reviews` USING GSI;
+
+# query on customer bucket
+CREATE PRIMARY INDEX `customer-primary-index` ON `customers` USING GSI;
+
+# query on purchase bucket
+CREATE PRIMARY INDEX `purchase-primary-index` ON `purchases` USING GSI;

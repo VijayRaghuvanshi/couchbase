@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class CouchbaseConnectionConfig {
 
-    @Value("${couchbase.connection.host:localhost:8080}")
+    @Value("${couchbase.connection.host:localhost}")
     private String host;
 
     @Value("${couchbase.connection.userName:admin}")
